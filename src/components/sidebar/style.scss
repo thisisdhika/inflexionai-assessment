@@ -1,0 +1,170 @@
+@import '@/scss/tools';
+
+.sidebar {
+  $parentClass: &;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  color: $black;
+  padding: 10px 26.5px;
+  z-index: $zIndex-sidebar;
+  background-color: #f8f9fa;
+  transform: translateX(-100%);
+  transition: transform ease-in-out 250ms;
+
+  @include breakpoint-down('large') {
+    box-shadow: 15px 0px 23px rgba($black, 0.05);
+  }
+
+  &.-visible {
+    transform: translateX(0%);
+  }
+
+  &__brand {
+    position: relative;
+    padding: 30px 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(224, 225, 226, 0) 0%,
+        #e0e1e2 49.52%,
+        rgba(224, 225, 226, 0.15625) 99.04%
+      );
+    }
+
+    &__logo {
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 150%;
+      color: currentColor;
+      text-decoration: unset;
+
+      .tid-icon {
+        font-size: 1.857rem;
+        vertical-align: -0.3em;
+        margin-right: 0.714rem;
+      }
+    }
+  }
+
+  &__menu,
+  &__account-menu {
+    margin: 22.5px 0;
+
+    &__ttl {
+      font-weight: 700;
+      line-height: 150%;
+      font-size: 0.857rem;
+      margin: 0 15px 20px;
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+
+      &__item {
+        &__link {
+          display: flex;
+          gap: 0.857rem;
+          color: $hitGrey;
+          font-weight: 700;
+          line-height: 150%;
+          padding: 12px 16px;
+          align-items: center;
+          font-size: 0.857rem;
+          border-radius: 15px;
+          text-decoration: none;
+          justify-content: flex-start;
+          background-color: transparent;
+          transition-duration: 150ms;
+          transition-property: box-shadow, background-color;
+          transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+          &.active {
+            background-color: $white;
+            box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+
+            .icon {
+              color: $white;
+              background-color: $primary;
+            }
+          }
+
+          &:hover {
+            .icon {
+              color: $white;
+              background-color: $primary;
+            }
+          }
+
+          .icon {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            color: $primary;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+            background-color: $white;
+            box-shadow: 0px 3.5px 5.5px rgba(0, 0, 0, 0.02);
+            transition-duration: 150ms;
+            transition-property: color, background-color;
+            transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+            .tid-icon {
+              font-size: 1.071rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    color: $white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/src/assets/images/sidebar-info-bg.png');
+
+    h5 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 140%;
+    }
+
+    p {
+      margin: 0;
+      font-weight: 400;
+      line-height: 150%;
+      font-size: 0.857rem;
+    }
+
+    .card {
+      &__header {
+        &__icon {
+          color: $primary;
+          background-color: $white;
+        }
+      }
+
+      &__body {
+        padding: 20px 0 10px;
+      }
+    }
+  }
+}

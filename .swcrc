@@ -1,0 +1,15 @@
+{
+  "minify": true,
+  "env": {
+    "targets": {
+      "chrome": "79"
+    },
+    "mode": "entry",
+    "coreJs": "3.22"
+  },
+  "jsc": {
+    "experimental": {
+      "plugins": [["loadable-components", {}]]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.card {
+  padding: 16px;
+  background: $white;
+  border-radius: 15px;
+  box-shadow: 0px 7px 23px rgba(0, 0, 0, 0.05);
+
+  &__header {
+    &__ttl {
+      color: $dark;
+      margin: 0 0 6px;
+      font-weight: 700;
+      line-height: 140%;
+      font-size: 1.286rem;
+    }
+
+    &__desc {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 140%;
+    }
+
+    &__icon {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      color: $white;
+      align-items: center;
+      border-radius: 12px;
+      justify-content: center;
+      background-color: $primary;
+
+      .tid-icon {
+        font-size: 1.714rem;
+      }
+    }
+  }
+
+  &__body {
+    overflow-x: auto;
+    padding: 15px 0 0;
+  }
+}

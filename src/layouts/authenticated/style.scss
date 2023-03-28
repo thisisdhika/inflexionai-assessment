@@ -1,0 +1,13 @@
+@import '@/scss/tools';
+
+.auth-layout {
+  background-color: #f8f9fa;
+
+  &__wrapper {
+    padding-left: $sidebar-width;
+
+    @include breakpoint-down('large') {
+      padding-left: 0px;
+    }
+  }
+}

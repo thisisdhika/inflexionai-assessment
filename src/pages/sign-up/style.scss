@@ -1,0 +1,123 @@
+@import '@/scss/tools';
+
+.sign-up {
+  color: $hitGrey;
+  position: relative;
+  min-height: $fill-screen-with-header;
+
+  @include breakpoint-down('large') {
+    min-height: $fill-screen-with-header-large;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 45vh;
+    top: 1.2rem;
+    left: 1.2rem;
+    border-radius: 0.8rem;
+    background-size: cover;
+    width: calc(100% - 2.4rem);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/src/assets/images/sign-up-bg.jpeg');
+
+    @include breakpoint-down('large') {
+      top: 0.65rem;
+      left: 0.65rem;
+      width: calc(100% - 1.3rem);
+    }
+  }
+
+  &__wrapper {
+    color: $white;
+    text-align: center;
+    padding: 126px 0 40px;
+
+    @include breakpoint-down('large') {
+      padding: 100px 0 30px;
+    }
+
+    h1 {
+      margin: 0 0 9.5px 0;
+      font-weight: 700;
+      line-height: 130%;
+      font-size: 2.286rem;
+    }
+
+    p {
+      margin: auto;
+      max-width: 45ch;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 140%;
+
+      @include breakpoint-down('large') {
+        max-width: 90%;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 452.5px;
+    padding: 45px 50px;
+    margin: 50px auto auto;
+
+    @include breakpoint-down('large') {
+      padding: 35px 20px;
+    }
+
+    h2 {
+      color: $dark;
+      margin: 0 0 24px 0;
+    }
+
+    & > span {
+      display: block;
+      color: $hitGrey;
+      font-weight: 700;
+      line-height: 140%;
+      margin: 20px 0 0;
+      font-size: 1.286rem;
+    }
+  }
+
+  &__options {
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      width: 75px;
+      display: flex;
+      height: 75px;
+      padding: 0px;
+      font-size: 1.841rem;
+      border-radius: 15px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e2e8f0;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: 15px;
+    text-align: initial;
+  }
+
+  &__link {
+    color: $hitGrey;
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import '@/scss/tools';
+
+.header-auth {
+  .btn-menu-toggle {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    color: $dark;
+    display: block;
+    align-self: center;
+    position: relative;
+    margin-right: 1rem;
+    margin-left: -0.25rem;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    padding: 25px 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include breakpoint-down('small') {
+      padding: 15px 0px;
+      align-items: center;
+    }
+  }
+
+  &__toolbar {
+    flex: 1;
+    gap: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .btn {
+      color: $hitGrey;
+    }
+
+    .search-input {
+      max-width: 200px;
+    }
+  }
+}

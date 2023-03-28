@@ -1,0 +1,13 @@
+.color {
+  &-hit-grey {
+    color: $hitGrey;
+  }
+
+  &-primary {
+    color: $primary;
+  }
+
+  &-success {
+    color: $success;
+  }
+}

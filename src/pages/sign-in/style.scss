@@ -1,0 +1,106 @@
+@import '@/scss/tools';
+
+.sign-in {
+  display: flex;
+  color: $hitGrey;
+  position: relative;
+  align-items: center;
+  min-height: $fill-screen-with-header;
+
+  @include breakpoint-down('large') {
+    min-height: $fill-screen-with-header-large;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 84vh;
+    width: 42.5vw;
+
+    @include breakpoint-down('large') {
+      width: 90vw;
+      height: 300px;
+    }
+
+    @include breakpoint-down('small') {
+      height: 100px;
+    }
+  }
+
+  &::before {
+    z-index: -1;
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/src/assets/images/chakra-logo.png');
+
+    @include breakpoint-down('large') {
+      opacity: 0.65;
+    }
+  }
+
+  &::after {
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    border-bottom-left-radius: 25px;
+    background-image: url('/src/assets/images/sign-in-bg.jpeg');
+  }
+
+  &__wrapper {
+    padding: 120px 0 60px;
+
+    @include breakpoint-down('large') {
+      padding-top: 300px;
+      text-align: center;
+    }
+
+    @include breakpoint-down('small') {
+      padding-top: 100px;
+    }
+
+    h1 {
+      margin: 0 0 8.5px 0;
+      color: $primary;
+      font-weight: 700;
+      line-height: 130%;
+      font-size: 2.286rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 140%;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 36px;
+
+    @include breakpoint-down('large') {
+      text-align: left;
+      margin: {
+        left: auto;
+        right: auto;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+@mixin make-container($fixedMaxInBreakpoints: 1400px) {
+  width: 100%;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: {
+    left: 20px;
+    right: 20px;
+  }
+
+  @include breakpoint-up('small') {
+    $width: 576px;
+
+    @if $width <= $fixedMaxInBreakpoints {
+      max-width: $width;
+    } @else {
+      max-width: $fixedMaxInBreakpoints;
+    }
+  }
+
+  @include breakpoint-up('medium') {
+    $width: 768px;
+
+    @if $width <= $fixedMaxInBreakpoints {
+      max-width: $width;
+    } @else {
+      max-width: $fixedMaxInBreakpoints;
+    }
+  }
+
+  @include breakpoint-up('large') {
+    $width: 978px;
+
+    @if $width <= $fixedMaxInBreakpoints {
+      max-width: $width;
+    } @else {
+      max-width: $fixedMaxInBreakpoints;
+    }
+  }
+
+  @include breakpoint-up('xlarge') {
+    $width: 1200px;
+
+    @if $width <= $fixedMaxInBreakpoints {
+      max-width: $width;
+    } @else {
+      max-width: $fixedMaxInBreakpoints;
+    }
+  }
+
+  @include breakpoint-up('xxlarge') {
+    $width: 1400px;
+
+    @if $width <= $fixedMaxInBreakpoints {
+      max-width: $width;
+    } @else {
+      max-width: $fixedMaxInBreakpoints;
+    }
+  }
+}
+
+@mixin make-button($primary, $secondary) {
+  border: solid 1px $primary;
+  background: $primary;
+  color: $secondary;
+
+  &--outlined {
+    background: $secondary;
+    color: $primary;
+  }
+
+  &--no-border {
+    border-width: 0px;
+  }
+
+  .icon {
+    &.left {
+      margin-right: 1ch;
+    }
+
+    &.right {
+      margin-left: 1ch;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// Breakpoints
+$breakpoints-up: (
+  'small': '576px',
+  'medium': '768px',
+  'large': '992px',
+  'xlarge': '1200px',
+  'xxlarge': '1400px',
+);
+
+$breakpoints-down: (
+  'small': '575.98px',
+  'medium': '767.98px',
+  'large': '991.98px',
+  'xlarge': '1199.98px',
+  'xxlarge': '1399.98px',
+);
+
+$fill-screen-with-header: calc(100vh - 65px);
+$fill-screen-with-header-large: calc(100vh - 115px);
+
+$sidebar-width: 250px;
+
+$zIndex-header: 1000;
+$zIndex-sidebar: 1001;

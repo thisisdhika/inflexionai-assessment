@@ -1,0 +1,7 @@
+@import '@/scss/tools';
+
+.guest-layout {
+  .container {
+    @include make-container(978px);
+  }
+}

@@ -1,0 +1,159 @@
+@import '@/scss/tools';
+
+.header-minimal {
+  $parentClass: &;
+
+  top: 24px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: $black;
+  position: absolute;
+  z-index: $zIndex-header;
+  transition-duration: 150ms;
+  transition-property: color, top;
+  transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+  .btn-menu-toggle {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-left: 1rem;
+    position: relative;
+    color: currentColor;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--transparent-light {
+    top: 30px;
+    color: $white;
+
+    @include breakpoint-down('large') {
+      top: 20px;
+    }
+
+    #{$parentClass} {
+      &__wrapper {
+        box-shadow: unset;
+        backdrop-filter: unset;
+        background: transparent;
+        border-color: transparent;
+      }
+
+      &__menu-mobile {
+        color: $dark;
+      }
+    }
+  }
+
+  &__wrapper {
+    z-index: 2;
+    height: 70px;
+    display: flex;
+    padding: 0 24px;
+    position: relative;
+    border-radius: 15px;
+    align-items: center;
+    border: 1.5px solid $white;
+    backdrop-filter: blur(10.5px);
+    justify-content: space-between;
+    box-shadow: 0px 7px 23px rgba($black, 0.05);
+    background: linear-gradient(112.83deg, rgba($white, 0.82) 0%, rgba($white, 0.8) 110.84%);
+    transition-duration: 100ms;
+    transition-property: border-color;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  &__brand {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 150%;
+    color: currentColor;
+    text-decoration: unset;
+
+    .tid-icon {
+      font-size: 1.571rem;
+      vertical-align: -0.3em;
+      margin-right: 0.714rem;
+    }
+  }
+
+  &__nav {
+    &__list {
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &__item {
+        &__link {
+          font-weight: 700;
+          font-size: 0.714rem;
+          line-height: 150%;
+          color: currentColor;
+          text-decoration: unset;
+          text-transform: uppercase;
+
+          .tid-icon {
+            font-size: 1.1rem;
+            margin-right: 0.214rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-mobile {
+    z-index: 1;
+    opacity: 0;
+    display: flex;
+    overflow: hidden;
+    margin-top: -20px;
+    position: relative;
+    border-radius: 15px;
+    pointer-events: none;
+    flex-direction: column;
+    padding: 2rem 1rem 1rem;
+    background-color: $white;
+    transition: opacity ease-in-out 250ms;
+    box-shadow: 0px 7px 23px rgba($black, 0.05);
+
+    &.-visible {
+      opacity: 1;
+      pointer-events: visible;
+    }
+
+    #{$parentClass} {
+      &__nav {
+        margin-bottom: 20px;
+
+        &__list {
+          gap: 20px;
+          flex-direction: column;
+
+          &__item {
+            &__link {
+              .tid-icon {
+                font-size: 1.7em;
+                vertical-align: -0.25em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

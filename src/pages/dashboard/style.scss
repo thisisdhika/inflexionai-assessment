@@ -1,0 +1,10 @@
+@import '@/scss/tools';
+
+.dashboard {
+  position: relative;
+  min-height: calc(#{$fill-screen-with-header} - 100px);
+
+  @include breakpoint-down('large') {
+    min-height: calc(#{$fill-screen-with-header-large} - 80px);
+  }
+}

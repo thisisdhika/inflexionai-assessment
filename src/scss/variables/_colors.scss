@@ -1,0 +1,70 @@
+$white: #fff;
+$black: #000;
+$gray200: #e2e8f0;
+$rhino: #313860;
+$mirage: #151928;
+$hitGrey: #a0aec0;
+$verdigris: #38b2ac;
+
+// Generic
+$primary: $verdigris;
+$secondary: $rhino;
+$light: $white;
+$dark: $mirage;
+$success: #68d391;
+
+// Button Colors
+$button-colors: () !default;
+$button-colors: map-merge(
+  (
+    'light': (
+      'bg': $light,
+      'color': $dark,
+    ),
+    'primary': (
+      'bg': $primary,
+      'color': $light,
+    ),
+    'secondary': (
+      'bg': $secondary,
+      'color': $light,
+    ),
+    'dark': (
+      'bg': linear-gradient(81.62deg, $rhino 2.25%, $mirage 79.87%),
+      'color': $light,
+    ),
+    'link': (
+      'color': $dark,
+      'bg': transparent,
+    ),
+  ),
+  $button-colors
+);
+
+// Badge Colors
+$badge-colors: () !default;
+$badge-colors: map-merge(
+  (
+    'hit-grey': (
+      'bg': $hitGrey,
+      'color': $light,
+    ),
+    'light': (
+      'bg': $light,
+      'color': $dark,
+    ),
+    'primary': (
+      'bg': $primary,
+      'color': $light,
+    ),
+    'secondary': (
+      'bg': $secondary,
+      'color': $light,
+    ),
+    'link': (
+      'color': $dark,
+      'bg': transparent,
+    ),
+  ),
+  $badge-colors
+);

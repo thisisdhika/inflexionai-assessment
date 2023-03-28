@@ -1,0 +1,97 @@
+$spaceAmounts: (1, 2, 3, 4, 5, 6, 7, 8, auto);
+
+@each $space in $spaceAmounts {
+  @if $space==auto {
+    .m-#{$space} {
+      margin: #{$space};
+    }
+
+    .mx-#{$space} {
+      margin-left: #{$space};
+      margin-right: #{$space};
+    }
+
+    .my-#{$space} {
+      margin-top: #{$space};
+      margin-bottom: #{$space};
+    }
+
+    .ml-#{$space} {
+      margin-left: #{$space};
+    }
+
+    .mr-#{$space} {
+      margin-right: #{$space};
+    }
+
+    .mb-#{$space} {
+      margin-bottom: #{$space};
+    }
+
+    .mt-#{$space} {
+      margin-top: #{$space};
+    }
+  } @else {
+    $size: $space * 0.65;
+
+    .m-#{$space} {
+      margin: #{$size}rem;
+    }
+
+    .mx-#{$space} {
+      margin-left: #{$size}rem;
+      margin-right: #{$size}rem;
+    }
+
+    .my-#{$space} {
+      margin-top: #{$size}rem;
+      margin-bottom: #{$size}rem;
+    }
+
+    .ml-#{$space} {
+      margin-left: #{$size}rem;
+    }
+
+    .mr-#{$space} {
+      margin-right: #{$size}rem;
+    }
+
+    .mb-#{$space} {
+      margin-bottom: #{$size}rem;
+    }
+
+    .mt-#{$space} {
+      margin-top: #{$size}rem;
+    }
+
+    .p-#{$space} {
+      padding: #{$size}rem;
+    }
+
+    .px-#{$space} {
+      padding-left: #{$size}rem;
+      padding-right: #{$size}rem;
+    }
+
+    .py-#{$space} {
+      padding-top: #{$size}rem;
+      padding-bottom: #{$size}rem;
+    }
+
+    .pl-#{$space} {
+      padding-left: #{$size}rem;
+    }
+
+    .pr-#{$space} {
+      padding-right: #{$size}rem;
+    }
+
+    .pb-#{$space} {
+      padding-bottom: #{$size}rem;
+    }
+
+    .pt-#{$space} {
+      padding-top: #{$size}rem;
+    }
+  }
+}

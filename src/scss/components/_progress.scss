@@ -1,0 +1,27 @@
+.progress {
+  color: $primary;
+  max-width: 125px;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 0.25em);
+    left: 0;
+    height: 3px;
+    border-radius: 3px;
+  }
+
+  &::after {
+    z-index: 1;
+    width: 100%;
+    background-color: $gray200;
+  }
+
+  &::before {
+    z-index: 2;
+    width: var(--progress);
+    background-color: $primary;
+  }
+}

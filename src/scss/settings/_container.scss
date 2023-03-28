@@ -1,0 +1,29 @@
+.container {
+  @include make-container;
+}
+
+.container-fluid {
+  width: 100%;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: {
+    left: 30px;
+    right: 30px;
+  }
+
+  @include breakpoint-down('small') {
+    padding: {
+      left: 10px;
+      right: 10px;
+    }
+  }
+
+  @include breakpoint-down('large') {
+    padding: {
+      left: 15px;
+      right: 15px;
+    }
+  }
+}

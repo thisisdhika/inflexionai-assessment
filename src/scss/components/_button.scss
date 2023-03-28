@@ -1,0 +1,33 @@
+.btn {
+  border: 0px;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 12px 30px;
+  font-size: 0.714rem;
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: $white;
+
+  .tid-icon {
+    font-size: 1.4em;
+  }
+
+  &-link {
+    padding: 0px;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--rounded {
+    border-radius: 20px;
+  }
+
+  @each $name, $color in $button-colors {
+    &.btn-#{$name} {
+      @include make-button(map-get($color, 'bg'), map-get($color, 'color'));
+    }
+  }
+}

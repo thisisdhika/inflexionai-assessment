@@ -1,0 +1,39 @@
+.table {
+  width: 100%;
+
+  thead {
+    border-bottom: 1px solid #e2e8f0;
+
+    th {
+      font-weight: 700;
+      text-align: left;
+      line-height: 150%;
+      font-size: 0.714rem;
+      padding: 12.5px 5px;
+    }
+  }
+
+  tbody {
+    tr {
+      &:not(:last-child) {
+        border-bottom: 1px solid #e2e8f0;
+      }
+    }
+
+    td {
+      color: $dark;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 140%;
+      padding: 21px 5px;
+
+      &.iconed {
+        .tid-icon {
+          font-size: 1.429rem;
+          vertical-align: -0.235em;
+          padding-inline-end: 0.65ch;
+        }
+      }
+    }
+  }
+}
